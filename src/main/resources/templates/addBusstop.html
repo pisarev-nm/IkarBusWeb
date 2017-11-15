@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>busstops</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<h1>Form</h1>
+
+<form th:action="@{/api/busstops/}" th:object="${bse}" method="POST">
+    First Name:
+    <input type="number"  th:field="*{id}"/>
+    <br/>
+    Last Name:
+    <input type="text" th:field="*{city}"/>
+    <br/>
+    <input type="submit" value="Create" />
+</form>
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

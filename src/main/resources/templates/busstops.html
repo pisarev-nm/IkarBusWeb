@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>busstops</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<a href="/api/addBusstop/">Add Bus stop</a>
+<br/>
+<table frame="box" rules="all">
+
+    <tr>
+        <td colspan="2">Направления</td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>Город</td>
+    </tr>
+<tr th:each="message : ${BusStopsEntity}">
+    <td th:text="${message.id}">ID</td>
+    <td th:text="${message.city}">Город</td>
+    <td>
+        <a th:href="@{'/api/addBusstop/'+${message.id}}">Edit</a>
+        <a th:href="@{'/api/busstops/delete'+${message.id}}">Delete</a>
+    </td>
+</tr>
+
+</table>
+
+
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
